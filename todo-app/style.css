@@ -1,26 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body {
-    font-family: sans-serif;
+    font-family: Ubuntu, sans-serif;
+    background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
 }
-
 .container {
     margin: 2em auto;
     max-width: 450px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 4px;
+    padding: 1em;
+    min-height: 50vh;
 }
-
 header {
     text-align: center;
 }
 /*
     SECTION: FORM
 */
-.form {
-}
 #todo-form {
     display: flex;
     justify-content: center;
 }
 #todo-form > * {
-    border: 1px solid black;
+    border: 1px solid transparent;
     font-size: 15px;
     line-height: 25px;
 }
@@ -40,17 +42,16 @@ input[type="submit"]:hover {
 .todo {
     padding: 0 2em;;
 }
-
 #todo-list li {
     margin-bottom: 1em;
 }
-
 
 
 /*  Class added using Javascript */
 .remove-item {
     color: indianred;
     padding: 0.2em 0.5em;
+    margin-left: 1em;
 }
 .remove-item:hover {
     background: indianred;

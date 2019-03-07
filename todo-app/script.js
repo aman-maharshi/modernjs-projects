@@ -1,12 +1,13 @@
 
 // Variables
 let form = document.querySelector('#todo-form');
-let todoItem = document.querySelector("#todo-item");
+let todoItem = document.querySelector("#todo-item");// selecting the text input
 let todoList = document.querySelector('#todo-list');
 
 
+// Event Listeners
 
-document.querySelector('#todo-form').addEventListener('submit', function(e){
+form.addEventListener('submit', function(e) {
     // preventing default form submitting
     e.preventDefault();
 
@@ -30,6 +31,19 @@ document.querySelector('#todo-form').addEventListener('submit', function(e){
         // clearing the text field
         form.reset();
     }
-
-    
 });
+
+todoList.addEventListener('click', function(e) {
+    if (e.target.classList.contains('remove-item')) {
+      console.log('Yes');  
+      e.target.parentElement.remove();  
+      // e.target.parentNode.style.display = "none";
+    }
+    else {
+        console.log('No');
+    }
+    // console.log(e.target);
+});
+
+
+
