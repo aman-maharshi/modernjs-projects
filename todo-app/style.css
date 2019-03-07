@@ -2,13 +2,58 @@ body {
     font-family: sans-serif;
 }
 
+.container {
+    margin: 2em auto;
+    max-width: 450px;
+}
+
+header {
+    text-align: center;
+}
+/*
+    SECTION: FORM
+*/
+.form {
+}
+#todo-form {
+    display: flex;
+    justify-content: center;
+}
+#todo-form > * {
+    border: 1px solid black;
+    font-size: 15px;
+    line-height: 25px;
+}
+input[type="submit"] {
+    margin-left: 1em;
+    color: white;
+    background: indianred;
+}
+input[type="submit"]:hover {
+    cursor: pointer;
+    color: indianred;
+    background: white;
+}
+/*
+    SECTION: TODO
+*/
+.todo {
+    padding: 0 2em;;
+}
+
+#todo-list li {
+    margin-bottom: 1em;
+}
 
 
+
+/*  Class added using Javascript */
 .remove-item {
-    color: red;
-    padding-left: 2em;
+    color: indianred;
+    padding: 0.2em 0.5em;
 }
 .remove-item:hover {
-    color: darkred;
+    background: indianred;
+    color: white;
     cursor: pointer;
 }
