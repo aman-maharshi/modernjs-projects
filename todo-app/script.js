@@ -6,6 +6,7 @@ let todoList = document.querySelector('#todo-list');
     EVENT LISTENERS
 */
 
+// event to add the item from input field on to the 'ul' element
 form.addEventListener('submit', function(e) {
     // preventing default form submitting
     e.preventDefault();
@@ -27,22 +28,23 @@ form.addEventListener('submit', function(e) {
         todoList.appendChild(li); // adding li to ul
     
         // clearing the text input field
-        form.reset();
+        form.reset(); // this.reset();
 
         // add the todo item to Local Storage
         addToLocalStorage(item);
     }
 });
 
+// event to remove item from DOM and from the local storage when 'X' button is clicked
 todoList.addEventListener('click', function(e) {
     if (e.target.classList.contains('remove-item')) { 
       e.target.parentElement.remove();  
       // e.target.parentNode.style.display = "none";
-    } else {
-        // console.log('\'X\' not clicked, but the \'li\' is clicked')
     }
+    removeFromLocalStorage(e.target.parentElement.textContent);
 });
 
+// event to load content from the local storage when the page loads or reloads 
 document.addEventListener('DOMContentLoaded', function() {
     let x = getFromLocalStorage();
 
@@ -79,7 +81,19 @@ function getFromLocalStorage() {
     } else {
         key = JSON.parse(value); // conveting the string(array) stored in local storage to an array so we can actually push items to it. 
     }
-    return key;
+    return key; // will return an Array
 }
 
+function removeFromLocalStorage(todoX) {
+    let todo = todoX.slice(0, todoX.length - 1);
+    let items = getFromLocalStorage();
 
+    // remove item from array
+    items.forEach(function (todoLS, index) {
+        if (todo == todoLS) {
+            items.splice(index, 1);
+        }
+    });
+    // write the array to the local storage
+    localStorage.setItem('todo', JSON.stringify(items));
+}
