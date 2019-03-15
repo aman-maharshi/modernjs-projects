@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Caveat');
+.container {
+    max-width: 450px;
+    margin: 0 auto;
+    font-family: Caveat, cursive;
+    background: whitesmoke;
+    padding: 1em;
+}
+/*
+    HEADER
+*/
+h1 {
+    font-size: 3rem;
+}
+h1, form {
+    text-align: center;
+}
+form > * {
+    border: 1px solid gray;
+    font-family: Caveat, cursive;
+    margin-bottom: 1em;
+    font-size: 1.4rem;
+    border-radius: 10px;
+}
+input[type="text"] {
+    width: 250px;
+}
+input[type="submit"] {
+    cursor: pointer;
+    margin-left: 0.5em;
+}
+input[type="submit"]:hover, input[type="submit"]:focus {
+    background: black;
+    color: white;
+}
+/*  
+    SECITON
+*/
+.todo-list {
+    width: 70%;
+    margin: 0 auto;
+    padding: 0.1em 0 0.1em 0;
+    font-size: 1.5rem;
+}
+/*
+    JAVASCRIPT TRIGGERED CLASSES
+*/
+.cross {
+    color: red;
+    margin-left: 1em;
+    cursor: pointer;
+}
