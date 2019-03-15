@@ -29,6 +29,8 @@ function addToList(event) {
         li.appendChild(crossBtn);
 
         form.reset();
+
+        saveToLocalStorage(todo);
     }   
 }
 function removeItem(event) {
@@ -36,3 +38,22 @@ function removeItem(event) {
        event.target.parentElement.remove();
    }
 }
+
+function loadFromLocalStorage() {
+    let items;
+    items = localStorage.getItem('todo')
+    if (items === null) {
+        items = [];
+    }
+    else {
+        items = JSON.parse(items);
+    }
+    return items;
+}
+
+function saveToLocalStorage(todo) {
+    let items = loadFromLocalStorage();
+    items.push(todo);
+    localStorage.setItem('todo', JSON.stringify(items));
+}
+
