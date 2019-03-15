@@ -52,8 +52,8 @@ function loadFromLocalStorage() {
 }
 
 function saveToLocalStorage(todo) {
-    let items = loadFromLocalStorage();
-    items.push(todo);
-    localStorage.setItem('todo', JSON.stringify(items));
+    let content = loadFromLocalStorage();
+    content.push(todo);
+    localStorage.setItem('todo', JSON.stringify(content));
 }
 
