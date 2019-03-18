@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <header id="header" class="header">
+        <div>
+            <h2>LEARN'U</h2>
+        </div>
+        <div class="cart">
+            <ul>
+                <li class="submenu">
+                    <img src="img/cart.png" id="img-cart">
+                        <div id="shopping-cart">
+                                <table id="cart-content">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <a href="#" id="clear-cart">Clear Cart</a>
+                        </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="hero">
+        <div class="hero-content">
+            <h2>Learn Something Today</h2>
+        </div>
+    </div>
+
+    <div id="courses-list" class="container">
+        <h1 id="heading" class="heading">Online Courses</h1>
+
+        <div class="course-container">
+            <div class="column">
+                <div class="card">
+                    <img src="img/course1.jpg" class="course-image">
+                    <div class="info-card">
+                        <h4>Modern JavaScript</h4>
+                        <p>Wes Bos</p>
+                        <p class="old-price">$200  <span class="new-price">$15</span></p>
+                        <a href="#" class="add-to-cart" data-id="1">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                    <div class="card">
+                        <img src="img/course2.jpg" class="course-image">
+                        <div class="info-card">
+                            <h4>Cooking Course</h4>
+                            <p>Jean-Philippe</p>
+                            <p class="old-price">$200  <span class="new-price">$15</span></p>
+                            <a href="#" class="add-to-cart" data-id="2">Add to Cart</a>
+                        </div>
+                    </div>
+            </div>
+            <div class="column">
+                    <div class="card">
+                        <img src="img/course3.jpg" class="course-image">
+                        <div class="info-card">
+                            <h4>Guitar for beginners</h4>
+                            <p>Paul Davids</p>
+                            <p class="old-price">$200  <span class="new-price">$15</span></p>
+                            <a href="#" class="add-to-cart" data-id="3">Add to Cart</a>
+                        </div>
+                    </div> 
+            </div>
+        </div> 
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
