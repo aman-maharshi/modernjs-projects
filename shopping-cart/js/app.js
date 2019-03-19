@@ -15,6 +15,21 @@ function addToCart(event) {
     }
 }
 
+// saving course details into an object
 function getCourseInfo(course) {
-    console.log(course);
+    // console.log(course)
+    const courseDetails = {
+        image: course.querySelector('img').src,
+        title: course.querySelector('h4').textContent,
+        price: course.querySelector('.new-price').textContent,
+        id: course.querySelector('a').getAttribute('data-id')
+
+    };
+    // console.log(courseDetails);
+    loadIntoCart (courseDetails);
+}
+
+// loading a html template onto the cart
+function loadIntoCart(details) {
+    console.log(details)
 }
