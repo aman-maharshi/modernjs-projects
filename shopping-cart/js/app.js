@@ -1,10 +1,13 @@
 // Variables
-let courses = document.querySelector('#courses-list');
-let cart = document.querySelector('#img-cart');
+let courses = document.querySelector('#courses-list'),
+    cartRow = document.querySelector('#cart-content tbody'),
+    clearCart = document.querySelector('#clear-cart');
 
+    
 //Event Listeners
-
 courses.addEventListener('click', addToCart);
+clearCart.addEventListener('click', clearCartContent);
+
 
 //Functions
 function addToCart(event) {
@@ -25,11 +28,22 @@ function getCourseInfo(course) {
         id: course.querySelector('a').getAttribute('data-id')
 
     };
-    // console.log(courseDetails);
+    // console.log(courseDetails.image)
     loadIntoCart (courseDetails);
 }
 
 // loading a html template onto the cart
 function loadIntoCart(details) {
-    console.log(details)
+    const row = document.createElement('tr');
+    row.innerHTML = `
+         <td> <img src=${details.image} width=100></td>
+         <td>${details.title}</td>
+         <td>${details.price}</td>
+         <td><a href="#" class="remove">X</a><td>
+    `;
+    cartRow.appendChild(row);
+}
+
+function clearCartContent() {
+    clearCart.parentElement.querySelector('tbody').remove();
 }
