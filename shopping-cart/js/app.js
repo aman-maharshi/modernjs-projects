@@ -1,13 +1,14 @@
 // Variables
 let courses = document.querySelector('#courses-list'),
-    cartRow = document.querySelector('#cart-content tbody'),
+    cartContent = document.querySelector('#cart-content tbody'),
     clearCart = document.querySelector('#clear-cart'),
     indicator = document.querySelector('.indicator');
 
     
 //Event Listeners
 courses.addEventListener('click', addToCart);
-clearCart.addEventListener('click', clearCartContent);
+cartContent.addEventListener('click', removeCourse);
+clearCart.addEventListener('click', removeAllCourses);
 
 
 //Functions
@@ -42,13 +43,24 @@ function loadIntoCart(details) {
          <td>${details.price}</td>
          <td><a href="#" class="remove">X</a><td>
     `;
-    cartRow.appendChild(row);
+    cartContent.appendChild(row);
     // to show and hide 'item added' indicator
     indicator.style.display = 'block';
-    window.setTimeout("indicator.style.display = 'none';", 1200);
+    window.setTimeout("indicator.style.display = 'none';", 500);
 
 }
 
-function clearCartContent() {
-    clearCart.parentElement.querySelector('tbody tr').remove();
+// remove a perticular course from cart
+function removeCourse(event) {
+    if (event.target.classList.contains('remove')) {
+        event.target.parentElement.parentElement.remove();
+    }
+}
+
+function removeAllCourses() {
+    // event.target.parentElement.querySelector('tbody').remove();
+    // cartContent.innerHTML= '';
+    while(cartContent.firstChild) {
+        cartContent.removeChild(cartContent.firstChild);
+    }
 }
