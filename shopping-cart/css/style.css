@@ -9,6 +9,19 @@ body {
     margin: 0 auto;
     max-width: 1110px;
 }
+.indicator {
+    font-size: 0.9rem;
+    background: rgb(255, 255, 118);
+    padding: 0.5em;
+    width: 40vw;
+    text-align: center;
+    margin: 0 auto;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: fixed;
+    left: 30%;
+    display: none;
+}
 /****************
     HEADER 
 ****************/

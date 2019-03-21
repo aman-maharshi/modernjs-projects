@@ -1,7 +1,8 @@
 // Variables
 let courses = document.querySelector('#courses-list'),
     cartRow = document.querySelector('#cart-content tbody'),
-    clearCart = document.querySelector('#clear-cart');
+    clearCart = document.querySelector('#clear-cart'),
+    indicator = document.querySelector('.indicator');
 
     
 //Event Listeners
@@ -42,6 +43,10 @@ function loadIntoCart(details) {
          <td><a href="#" class="remove">X</a><td>
     `;
     cartRow.appendChild(row);
+    // to show and hide 'item added' indicator
+    indicator.style.display = 'block';
+    window.setTimeout("indicator.style.display = 'none';", 1200);
+
 }
 
 function clearCartContent() {
