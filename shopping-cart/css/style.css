@@ -111,7 +111,7 @@ body {
 }
 @media (max-width: 900px) {
     .course-container {
-        flex-direction: column-reverse;
+        flex-direction: column;
         padding: 1em;
         max-width: 400px;
         margin: 0 auto;

@@ -42,7 +42,7 @@ function loadIntoCart(details) {
          <td> <img src=${details.image} width=100></td>
          <td>${details.title}</td>
          <td>${details.price}</td>
-         <td><a href="#" class="remove">X</a><td>
+         <td><a href="#" class="remove" id=${details.id}>X</a></td>
     `;
     cartContent.appendChild(row);
     // to show and hide 'item added' indicator
@@ -75,8 +75,19 @@ function addToLocalStorage(details) {
 // remove a perticular course from cart
 function removeCourse(event) {
     if (event.target.classList.contains('remove')) {
+        let idCart = event.target.parentElement.parentElement.querySelector('a').getAttribute('id')
+        removeCourseLocalStorage(idCart);
         event.target.parentElement.parentElement.remove();
     }
+}
+// remove the matching cart element from local storage as well
+function removeCourseLocalStorage(idCart) {
+    courses = getItemFromLocalStorage();
+    courses.forEach(function(obj, index) {
+        if (obj.id == idCart)
+            courses.splice(index, 1)
+    });
+    localStorage.setItem('course', JSON.stringify(courses));
 }
 
 // clear all items from cart
@@ -101,7 +112,7 @@ function loadFromLocalStorage() {
          <td> <img src=${course.image} width=100></td>
          <td>${course.title}</td>
          <td>${course.price}</td>
-         <td><a href="#" class="remove">X</a><td>
+         <td><a href="#" class="remove" id=${course.id}>X</a></td>
         `;
         cartContent.appendChild(entry);
     })
