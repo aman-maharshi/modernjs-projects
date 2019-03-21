@@ -45,5 +45,5 @@ function loadIntoCart(details) {
 }
 
 function clearCartContent() {
-    clearCart.parentElement.querySelector('tbody').remove();
+    clearCart.parentElement.querySelector('tbody tr').remove();
 }
