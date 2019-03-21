@@ -9,6 +9,7 @@ let courses = document.querySelector('#courses-list'),
 courses.addEventListener('click', addToCart);
 cartContent.addEventListener('click', removeCourse);
 clearCart.addEventListener('click', removeAllCourses);
+document.addEventListener('DOMContentLoaded', loadFromLocalStorage);
 
 
 //Functions
@@ -31,7 +32,7 @@ function getCourseInfo(course) {
 
     };
     // console.log(courseDetails.image)
-    loadIntoCart (courseDetails);
+    loadIntoCart(courseDetails);
 }
 
 // loading a html template onto the cart
@@ -48,6 +49,27 @@ function loadIntoCart(details) {
     indicator.style.display = 'block';
     window.setTimeout("indicator.style.display = 'none';", 500);
 
+    addToLocalStorage(details)
+}
+
+// get items from local storage
+function getItemFromLocalStorage() {
+     let item = localStorage.getItem('course')
+     if(item === null) {
+         item = [];
+     }
+     else {
+         item = JSON.parse(item)
+     }
+     return item;
+}
+
+// adding the course content to local storage
+function addToLocalStorage(details) {
+    let courseInfo = getItemFromLocalStorage();
+    courseInfo.push(details);
+    localStorage.setItem('course', JSON.stringify(courseInfo));
+
 }
 
 // remove a perticular course from cart
@@ -57,10 +79,31 @@ function removeCourse(event) {
     }
 }
 
+// clear all items from cart
 function removeAllCourses() {
     // event.target.parentElement.querySelector('tbody').remove();
     // cartContent.innerHTML= '';
     while(cartContent.firstChild) {
         cartContent.removeChild(cartContent.firstChild);
     }
+    localStorage.removeItem('course');
 }
+
+// loading content from local storage to cart on page refresh/load
+function loadFromLocalStorage() {
+    let courseList = getItemFromLocalStorage();
+    // console.log(courseList);
+    courseList.forEach(function(course) {
+        // console.log(course.image);
+        let entry = document.createElement('tr');
+
+        entry.innerHTML = `
+         <td> <img src=${course.image} width=100></td>
+         <td>${course.title}</td>
+         <td>${course.price}</td>
+         <td><a href="#" class="remove">X</a><td>
+        `;
+        cartContent.appendChild(entry);
+    })
+}
+    
