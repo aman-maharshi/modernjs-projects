@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Insurance Price Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+                <h1 class="text-center">Car Insurance Price Calculator</h1>
+        </header>
+
+        <main>
+            <form action="#" id="form">   
+                <div class="select-option">
+                    <label for="country">Manufacturing Country: </label>
+                    <select id="country">
+                        <option value="">- Select -</option>
+                        <option value="1">American</option>
+                        <option value="2">Indian</option>
+                        <option value="3">European</option>
+                    </select>
+                
+                    <label for="year">Year: </label>
+                    <select id="year"></select>
+                </div> <br>
+                
+                <fieldset>
+                    <legend>Insurance Type: </legend>
+                    <div>
+                        <input type="radio" name="type" value="basic" checked>
+                        <span>Basic</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="type" value="complete">
+                        <span>Complete</span>
+                    </div>
+                </fieldset>
+
+                <div id="loader">
+                    <img src="img/spinner.gif" width="150" height="150">
+                </div>
+                
+                <div id="result"></div>
+                
+                <button type="submit">Get Price</button>
+            </form> 
+            </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
