@@ -44,15 +44,20 @@ function getFormData(e) {
     }
     // compute the insurance if all the fields are valid
     else {
-        // message.textContent = '';
+
+        const insurance = new Insurance(country, year, insuranceType);
+        const price = insurance.calculatePrice(insurance);
+        console.log(price);
+
         loader.style.display = 'block';
         setTimeout(function(){
             loader.style.display = 'none'
         }, 2000)
-        console.log('Input Submitted');
     }
 
 }
+
+
 
 
 // OBJECTS
@@ -78,4 +83,54 @@ HTMLUI.prototype.displayError = function(error) {
     setTimeout(function(){
         message.textContent = '';
     }, 3000)
+}
+
+
+// compute the insurance
+function Insurance(make, year, level) {
+    this.make = make;
+    this.year = year;
+    this.level = level;
+}
+
+Insurance.prototype.calculatePrice = function(insurance) {
+    // console.log(insurance); 
+    let price;
+    const base = 5000;
+
+    const make = insurance.make;
+
+    // changing the cost depending on the manufacturing country
+    switch(make) {
+        case 'American':
+            price = base * 1.5;
+            break;
+        case 'Indian': 
+            price = base;
+            break;
+        case 'European':
+            price = base * 2  
+    }
+    // console.log('base price:' + price);
+    // changing the cost depending on the year of manufacture
+    const year = insurance.year;
+    const difference = new Date().getFullYear() - year;
+    
+    // each year cost of insurance will decrease by 3%
+    price = price - ((difference * 3)* price) / 100;
+    // console.log('price based on year of manufacture: ' + price);
+
+    // changing the price depending on the type of insurance selected
+    const level = insurance.level;
+    // basic will increase the price by 20% and complete will increase the price by 40%
+    if (level === 'Basic') {
+        price = price + price * 0.2;
+    }
+    if(level === 'Complete') {
+        price = price + price * 0.4;
+    }
+    // console.log('price based on the plan selected: ' + price )
+
+    return price;
+
 }
