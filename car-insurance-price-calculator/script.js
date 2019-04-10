@@ -1,7 +1,9 @@
 //  VARIABLES 
 let yearSelect = document.querySelector("#year"),
     form = document.getElementById('form'),
-    countrySelect = document.getElementById('country');
+    countrySelect = document.getElementById('country'),
+    message = document.getElementById('message'),
+    loader = document.getElementById('loader');
 
 const html = new HTMLUI();
 
@@ -14,8 +16,6 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 form.addEventListener('submit', getFormData)
-
-
 
 
 //  FUNCTIONS
@@ -42,8 +42,13 @@ function getFormData(e) {
     if (country === '' || year === '' || insuranceType === '' ) {
         html.displayError('All fields are mandatory!')
     }
+    // compute the insurance if all the fields are valid
     else {
-        document.getElementById('message').textContent = '';
+        // message.textContent = '';
+        loader.style.display = 'block';
+        setTimeout(function(){
+            loader.style.display = 'none'
+        }, 2000)
         console.log('Input Submitted');
     }
 
@@ -67,10 +72,10 @@ HTMLUI.prototype.displayYears = function() {
 }
 
 HTMLUI.prototype.displayError = function(error) {
-    document.getElementById('message').textContent = error;
+    message.textContent = error;
 
     // remove the message after 3 seconds
     setTimeout(function(){
-        document.getElementById('message').textContent = '';
+        message.textContent = '';
     }, 3000)
 }
