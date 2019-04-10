@@ -10,23 +10,13 @@ const html = new HTMLUI();
 
 //  EVENT LISTENERS
 
-// document.addEventListener('DOMContentLoaded', loadYearSelector)
 document.addEventListener('DOMContentLoaded', function(){
     html.displayYears();
 });
-
 form.addEventListener('submit', getFormData)
 
 
-//  FUNCTIONS
-
-// load the year select options of the form
-// function loadYearSelector() {
-//     for(let i = 2000; i < 2020; i++) {
-//         let option = `<option value="${i}">${i}</option>`
-//         yearSelect.innerHTML += option;
-//     }
-// }
+//  FUNCTIONS and OBJECTS
 
 function getFormData(e) {
     e.preventDefault();
@@ -44,20 +34,14 @@ function getFormData(e) {
     }
     // compute the insurance if all the fields are valid
     else {
-
         const insurance = new Insurance(country, year, insuranceType);
         const price = insurance.calculatePrice(insurance);
-        console.log(price);
+        // console.log(price);
 
-        loader.style.display = 'block';
-        setTimeout(function(){
-            loader.style.display = 'none'
-        }, 2000)
+        html.showResult(price);
     }
 
 }
-
-
 
 
 // OBJECTS
@@ -83,6 +67,17 @@ HTMLUI.prototype.displayError = function(error) {
     setTimeout(function(){
         message.textContent = '';
     }, 3000)
+}
+
+HTMLUI.prototype.showResult = function(price) {
+    const result = document.getElementById('result');
+
+    loader.style.display = 'block';
+    setTimeout(function() {
+        loader.style.display = 'none'
+        result.innerHTML = `Total Amount: ${price} INR`
+    }, 2000)
+
 }
 
 
