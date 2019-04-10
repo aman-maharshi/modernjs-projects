@@ -9,7 +9,6 @@ const html = new HTMLUI();
 
 
 //  EVENT LISTENERS
-
 document.addEventListener('DOMContentLoaded', function(){
     html.displayYears();
 });
@@ -17,7 +16,6 @@ form.addEventListener('submit', getFormData)
 
 
 //  FUNCTIONS and OBJECTS
-
 function getFormData(e) {
     e.preventDefault();
     
@@ -43,9 +41,7 @@ function getFormData(e) {
 
 }
 
-
 // OBJECTS
-
 function HTMLUI() {}
 
 HTMLUI.prototype.displayYears = function() {
