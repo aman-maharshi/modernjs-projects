@@ -4,6 +4,5 @@ addExpence = document.getElementById('add-expence');
 addExpence.addEventListener('submit', demo);
 function demo (event) {
     event.preventDefault();
-
-    // console.log(2)
+    console.log('It Works!!')
 }
