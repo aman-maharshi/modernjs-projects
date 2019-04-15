@@ -62,22 +62,6 @@ form {
     display: flex;
     flex-direction: column;
 }
-input[type="submit"] {
-    width: 100px;
-    align-self: center;   
-    background-color: var(--black-light);
-    color: var(--cyan);
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-input[type="submit"]:hover {
-    color: var(--orange);
-}
-.form-row {
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: column;
-}
 input {
     font-size: 1.1rem;
     margin-top: 0.5em;
@@ -86,6 +70,24 @@ input {
     background: lightgray;
     border-radius: 10px;
     padding: 0.5rem;
+    border: 2px solid gray;
+}
+input[type="submit"] {
+    width: 100px;
+    align-self: center;   
+    background-color: var(--black-light);
+    color: var(--cyan);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    border: none;
+}
+input[type="submit"]:hover {
+    color: var(--orange);
+}
+.form-row {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
 }
 /*  SECOND COLUMN */
 .budget {
@@ -114,7 +116,8 @@ input {
 #list-items {
     list-style-type: none;
     padding: 0.5em;
-    max-height: 20vh;
+    /* making the list items overflow scroll */
+    max-height: 20vh; 
     overflow-y: scroll;
 }
 
