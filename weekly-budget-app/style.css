@@ -21,7 +21,7 @@ body {
 
 }
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 header {
@@ -44,6 +44,8 @@ section {
     padding: 1em;
     display: flex;
     flex-direction: column;
+    box-shadow: 5px 5px 10px var(--black-light);
+    max-height: 80vh;
 }
 section > .column {
     flex: 1; /* stretch both the columns */ 
@@ -96,12 +98,14 @@ input {
     border-radius: 10px;
     padding: 0.5em;
 }
-
-/* .budget-status {
-
+/* 
+.budget-status {;
 } */
 .budget-left {
     margin-left: 1em;
+    /* background-color: orange; */
+    /* background-color: orangered; */
+    background-color: lightgreen;
 }
 .list-heading {
     color: var(--orange);
@@ -110,4 +114,16 @@ input {
 #list-items {
     list-style-type: none;
     padding: 0.5em;
+    max-height: 20vh;
+    overflow-y: scroll;
+}
+
+@media (min-width: 700px) {
+    section {
+        flex-direction: row;
+    }
+    #list-items {
+        max-height: 40vh;
+    }
+
 }
