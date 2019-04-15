@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+:root {
+    --black: #161819;
+    --white: #fff;
+    --cyan:  #8EF2FF;
+    --orange: #E36E40;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
+}
+body {
+    color: var(--black);
+}
+.container {
+    height: 100vh;
+    background-image: linear-gradient(to left, var(--cyan) 0%, var(--orange) 60%);
+}
+header {
+    text-align: center;
+    padding-top: 2em;
+}
+h1 {
+    font-size: 2rem;
+}
+
+/************
+    SECTION
+*************/
+/* FIRST COLUMN*/
+section {
+    background-color: var(--white);
+    min-height: 60vh;
+    margin: 1em;
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+section > .column {
+    flex: 1; /* stretch both the columns */ 
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.column > p {
+    color: var(--orange);
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input[type="submit"] {
+    width: 100px;
+    align-self: center;   
+    background-color: rgba(0,0,0,0.75);
+    color: var(--cyan);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+input[type="submit"]:hover {
+    color: var(--orange);
+}
+.form-row {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+input {
+    font-size: 1.1rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border: none;
+    background: lightgray;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+/*  SECOND COLUMN */

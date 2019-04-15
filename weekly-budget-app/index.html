@@ -9,6 +9,38 @@
     <title>Weekly Budget Tracker</title>
 </head>
 <body>
+    <div class="container">
+        <header><h1>Weekly Budget Tracker</h1></header>
+        <section>
+            <div class="column">
+                <p class="heading">Add your daily expences: </p>
+                <form id="add-expence" action="#">
+                    <div class="form-row">
+                        <label for="expense">Name: </label>
+                        <input type="text" id="expence" placeholder="Ex: Groceries">
+                    </div>
+                    <div class="form-row">
+                        <label for="expense">Amount: </label>
+                        <input type="text" id="expence" placeholder="Ex: 200">
+                    </div>
+                    <input type="submit" value="Add"></input>
+                </form>
+            </div>
+
+            <div class="column">
+                <div class="budget">
+                    <p>Budget: <span id=total-budget>__</span> INR</p>
+                    <p>Left: <span id="left-budget">__</span> INR</p>
+                </div>
+                <div>
+                    <p class="heading">List: </p>
+                    <ul id="list-items"></ul>
+                </div>
+            </div>
+            
+        </section>
+        <footer></footer>
+    </div>
     
     
     <script src="script.js"></script>
