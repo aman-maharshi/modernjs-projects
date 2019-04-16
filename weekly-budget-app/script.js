@@ -1,4 +1,10 @@
 
+/*
+    TODO: 
+        - show the list items when an item is added
+        - add and update the left amount for every added entry in the list
+*/
+
 //  VARIABLES
 const addExpence = document.getElementById('add-expence'),
     inputExpence = document.getElementById('expence'),
