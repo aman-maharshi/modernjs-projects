@@ -105,8 +105,6 @@ input[type="submit"]:hover {
 } */
 .budget-left {
     margin-left: 1em;
-    /* background-color: orange; */
-    /* background-color: orangered; */
     background-color: lightgreen;
 }
 .list-heading {
@@ -117,10 +115,17 @@ input[type="submit"]:hover {
     list-style-type: none;
     padding: 0.5em;
     /* making the list items overflow scroll */
-    max-height: 20vh; 
+    max-height: 15vh; 
     overflow-y: scroll;
+    color: var(--black);
 }
+#list-items li:not(:last-child) {
+    border-bottom: 1px solid lightgray;
+    width: 50%;
+    padding-bottom: 0.25em;
+    margin-bottom: 0.25em;
 
+}
 @media (min-width: 700px) {
     section {
         flex-direction: row;
@@ -129,4 +134,15 @@ input[type="submit"]:hover {
         max-height: 40vh;
     }
 
+}
+.orange {
+    background-color: orange;
+}
+.red {
+    background-color: lightcoral; 
+}
+#message{
+    color: red;
+    text-align: center;
+    margin-top: 0.25em;
 }
