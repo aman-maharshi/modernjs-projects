@@ -16,12 +16,11 @@ const addExpence = document.getElementById('add-expence'),
 
 let userBudget, budget;
 
+
 //  EVENT LISTENERS
 document.addEventListener('DOMContentLoaded', init);
 addExpence.addEventListener('submit', formSubmit);
 
-
-//  CLASSES
 
 // FUNCTIONS
 function init() {
