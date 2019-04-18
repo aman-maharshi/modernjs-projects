@@ -1,5 +1,4 @@
-## Projects from Modern Javascript The Complete Course 
-
+## ModernJs Projects
 >Below are the links to all the Projects, hosted with GitHub Pages
 
 
