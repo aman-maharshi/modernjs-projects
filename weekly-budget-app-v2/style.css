@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body {
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    background-repeat: no-repeat;
     font-family: Ubuntu, sans-serif;
     height: 100vh;
-    background-color: #30cfd0;
 }
 header {
     padding-bottom: 1em;
@@ -21,4 +21,34 @@ h1 {
 h4 {
     padding: 0.5em;
 }
+.bg-info {
+    background-color: lightskyblue;
+}
+.bg-success {
+    background-color: lightgreen;
+}
+.bg-warning {
+    background-color: orange;
+}
+.bg-danger {
+    background-color: lightcoral;
+}
+
 /*  STICKY FOOTER   */
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 1em;
+}
+/* @media (max-width: 991px) {
+    footer {
+        display: none;
+    }
+} */
+@media (max-height: 650px) {
+    footer {
+        display: none;
+    }
+}
+
+
