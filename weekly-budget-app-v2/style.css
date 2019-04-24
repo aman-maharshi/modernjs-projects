@@ -3,7 +3,7 @@ body {
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
     background-repeat: no-repeat;
     font-family: Ubuntu, sans-serif;
-    height: 100vh;
+    min-height: 100vh;
 }
 header {
     padding-bottom: 1em;
@@ -15,23 +15,15 @@ main > .container {
     border-radius: 10px;
     margin: 1em auto;
 }
+.list-group {
+    max-height: 30vh;
+    overflow: scroll;
+}
 h1 {
     color: white;
 }
 h4 {
     padding: 0.5em;
-}
-.bg-info {
-    background-color: lightskyblue;
-}
-.bg-success {
-    background-color: lightgreen;
-}
-.bg-warning {
-    background-color: orange;
-}
-.bg-danger {
-    background-color: lightcoral;
 }
 
 /*  STICKY FOOTER   */
@@ -49,6 +41,20 @@ footer {
     footer {
         display: none;
     }
+}
+
+/*  COLOR CLASSES   */
+.bg-info {
+    background-color: lightskyblue;
+}
+.bg-success {
+    background-color: lightgreen;
+}
+.bg-warning {
+    background-color: orange;
+}
+.bg-danger {
+    background-color: lightcoral;
 }
 
 
