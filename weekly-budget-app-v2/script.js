@@ -69,10 +69,10 @@ function updateBudget(expence) {
 function checkBudget(budget) {
     let initialBudget = Number(myBudget.textContent);
 
-    if (budget <= 0.75 * initialBudget) {
+    if (budget <= 0.5 * initialBudget) {
         amountLeft.parentElement.className = 'bg-warning';
     }
-    if (budget <= 0.5 * initialBudget) {
+    if (budget <= 0.25 * initialBudget) {
         amountLeft.parentElement.className = 'bg-danger';
     }
     if (budget <= 0) {
