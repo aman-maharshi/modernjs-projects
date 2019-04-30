@@ -32,11 +32,11 @@ footer {
     width: 100%;
     bottom: 1em;
 }
-/* @media (max-width: 991px) {
+@media (max-width: 991px) {
     footer {
         display: none;
     }
-} */
+}
 @media (max-height: 650px) {
     footer {
         display: none;
@@ -58,3 +58,15 @@ footer {
 }
 
 
+#form-first {
+    text-align: center;
+}
+#enter-budget,  #button-one {
+    height: 2em;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#message-first, #message-second {
+    color: lightcoral;
+}
