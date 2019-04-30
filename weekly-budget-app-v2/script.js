@@ -40,6 +40,8 @@ function enableForm() {
     expenceName.disabled = false;
     expenceAmount.disabled = false;
     document.getElementById('add-btn').disabled = false;
+    enterBudget.disabled = true;
+    document.getElementById('button-one').disabled = true;
 }
 function addExpence(e) {
     e.preventDefault();
