@@ -42,7 +42,6 @@ footer {
         display: none;
     }
 }
-
 /*  COLOR CLASSES   */
 .bg-info {
     background-color: lightskyblue;
@@ -56,8 +55,6 @@ footer {
 .bg-danger {
     background-color: lightcoral;
 }
-
-
 #form-first {
     text-align: center;
 }
@@ -66,7 +63,20 @@ footer {
     text-align: center;
     font-size: 2rem;
 }
-
 #message-first, #message-second {
-    color: lightcoral;
+    color: red;
+    font-size: 1.75rem;
+    margin-top: 5px;
+}
+#form-first {
+    padding: 0.75em;
+    border-bottom: 2px dotted gray;
+}
+@media (min-width: 768px) {
+    #enter-budget {
+        width: 400px;
+    }
+    #button-one {
+        margin-left: 1em;
+    }
 }
