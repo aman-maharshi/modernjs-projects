@@ -48,10 +48,9 @@ function addExpence(e) {
     formSecond.reset();
     expenceName.focus();
     addToList(name, amount);
+    updateBudget(amount);
 }
 function addToList(item, value) {
-    console.log(item, value);
-
     let li = document.createElement('li');
     let span = document.createElement('span');
     li.className = 'list-group-item';
@@ -61,6 +60,23 @@ function addToList(item, value) {
     li.appendChild(span);
     expenceList.appendChild(li);
 }
-function updateBudget() {
+function updateBudget(expence) {
+    let total = budget - expence;
+    budget = total;
+    amountLeft.textContent = budget;
+    checkBudget(budget);
+}
+function checkBudget(budget) {
+    let initialBudget = Number(myBudget.textContent);
 
+    if (budget <= 0.75 * initialBudget) {
+        amountLeft.parentElement.className = 'bg-warning';
+    }
+    if (budget <= 0.5 * initialBudget) {
+        amountLeft.parentElement.className = 'bg-danger';
+    }
+    if (budget <= 0) {
+        amountLeft.parentElement.className = 'bg-danger';
+        document.getElementById('message-second').textContent = 'You have used up your entire budget for the week!'
+    }
 }
