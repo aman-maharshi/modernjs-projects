@@ -3,7 +3,10 @@ const enterBudget = document.querySelector('#enter-budget'),
     formFirst = document.querySelector('#form-first'),
     expenceName = document.querySelector('#name'),
     expenceAmount = document.querySelector('#amount'),
-    formSecond = document.querySelector('#form-second');
+    formSecond = document.querySelector('#form-second'),
+    myBudget = document.querySelector('#budget'),
+    amountLeft = document.querySelector('#left'),
+    expenceList = document.querySelector('#list');
 
 let budget;
 
@@ -23,6 +26,8 @@ function init(e) {
     if (budget !== '') {
         enableForm();
         expenceName.focus();
+        myBudget.textContent = budget;
+        amountLeft.textContent = budget;
     }
     else {
         document.getElementById('message-first').textContent = 'This field cant\'t be left empty';
@@ -36,11 +41,28 @@ function enableForm() {
     expenceAmount.disabled = false;
     document.getElementById('add-btn').disabled = false;
 }
-function addExpence() {
+function addExpence(e) {
+    e.preventDefault();
+    let name = expenceName.value,
+        amount = expenceAmount.value;
+    
 
+    formSecond.reset();
+    expenceName.focus();
+
+    addToList(name, amount);
 }
-function addToList() {
+function addToList(item, value) {
+    console.log(item, value);
 
+    let li = document.createElement('li');
+    let span = document.createElement('span');
+    li.className = 'list-group-item';
+    span.className = 'badge';
+    span.textContent = value;
+    li.textContent = item;
+    li.appendChild(span);
+    expenceList.appendChild(li);
 }
 function updateBudget() {
 
