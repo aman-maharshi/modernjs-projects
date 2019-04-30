@@ -45,11 +45,8 @@ function addExpence(e) {
     e.preventDefault();
     let name = expenceName.value,
         amount = expenceAmount.value;
-    
-
     formSecond.reset();
     expenceName.focus();
-
     addToList(name, amount);
 }
 function addToList(item, value) {
