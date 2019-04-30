@@ -54,14 +54,16 @@ function addExpence(e) {
     updateBudget(amount);
 }
 function addToList(item, value) {
-    let li = document.createElement('li');
-    let span = document.createElement('span');
-    li.className = 'list-group-item';
-    span.className = 'badge';
-    span.textContent = value;
-    li.textContent = item;
-    li.appendChild(span);
-    expenceList.appendChild(li);
+    if(item != '' && value != '') {
+        let li = document.createElement('li');
+        let span = document.createElement('span');
+        li.className = 'list-group-item';
+        span.className = 'badge';
+        span.textContent = value;
+        li.textContent = item;
+        li.appendChild(span);
+        expenceList.appendChild(li);
+    }
 }
 function updateBudget(expence) {
     let total = budget - expence;
