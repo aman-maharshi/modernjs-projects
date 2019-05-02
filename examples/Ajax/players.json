@@ -2,16 +2,22 @@
     {
         "player": "Nadal",
         "titles": 250,
-        "lastMajor": "French Open"
+        "lastMajor": "French Open",
+        "favoriteSurface": "Clay",
+        "turnedPro": 2001
     },
     {
         "player": "Federer",
         "titles": 275,
-        "lastMajor": "Australian Open"
+        "lastMajor": "Australian Open",
+        "favoriteSurface": "Grass",
+        "turnedPro": 1998
     },
     {
         "player": "Djokovic",
         "titles": 205,
-        "lastMajor": "US Open"
+        "lastMajor": "US Open",
+        "favoriteSurface": "Plexicushion",
+        "turnedPro": 2003
     }
 ]
