@@ -1,6 +1,6 @@
 /*
     FIRST
-*/
+--------------------*/
 document.getElementById('btn1').addEventListener('click', loadData);
 
 function loadData() {
@@ -25,6 +25,7 @@ function loadData() {
             document.getElementById('result1').innerHTML  = `<p class="crimson">Location: ${obj.city}</p>`;
         }
     }
+
     // STEP 3 another way of executing ajax call
     xhr.onreadystatechange = function() {
         /*
@@ -40,14 +41,13 @@ function loadData() {
         }
     }
 
-
     // STEP 4: send request
     xhr.send();
 }
 
 /*
     SECOND
-*/
+-----------------*/
 document.getElementById('btn2').addEventListener('click', loadPlayerInfo);
 
 function loadPlayerInfo() {
@@ -72,4 +72,26 @@ function loadPlayerInfo() {
     }
     // 4. send request
     xhr.send();
+}
+/* 
+    THIRD
+---------------------*/
+document.querySelector('#btn3').addEventListener('click', loadUsersFromApi)
+
+function loadUsersFromApi() {
+
+    let xhr = new XMLHttpRequest;
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true)
+    xhr.onload = function() {
+        if(this.status === 200) {
+            let jsonData = JSON.parse(this.responseText);
+            let output = '';
+            jsonData.forEach(element => {
+                output += `<li class="list">${element.name}</li>`
+            });
+            document.getElementById('result3').innerHTML = output;
+        }
+    }
+    xhr.send();
+
 }
