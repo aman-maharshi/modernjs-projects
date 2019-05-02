@@ -1,11 +1,29 @@
-.first {
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+section {
     max-width: 800px;
     height: 20vh;
-    background-color: lightblue;
     padding: 1em;
+    text-align: center;
+    margin: 0.5em auto;
 }
-.first button {
-    width: 5em;
-    font-size: 1.1rem;
+.first {
+    background: lightblue;
+}
+.second {
+    background: lightgray;
+    height: 35vh;
+}
+button {
+    width: 4em;
+    font-size: 1rem;
     cursor: pointer;
+    padding: 5px;
 }
+.crimson {
+    color: red;
+    font-size: 0.9rem;
+}
+

@@ -1,0 +1,17 @@
+[
+    {
+        "player": "Nadal",
+        "titles": 250,
+        "lastMajor": "French Open"
+    },
+    {
+        "player": "Federer",
+        "titles": 275,
+        "lastMajor": "Australian Open"
+    },
+    {
+        "player": "Djokovic",
+        "titles": 205,
+        "lastMajor": "US Open"
+    }
+]
