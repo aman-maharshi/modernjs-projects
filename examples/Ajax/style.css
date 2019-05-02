@@ -1,0 +1,11 @@
+.first {
+    max-width: 800px;
+    height: 20vh;
+    background-color: lightblue;
+    padding: 1em;
+}
+.first button {
+    width: 5em;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
