@@ -8,3 +8,6 @@
 * Fetche data from a REST API
 * Send parameters to the REST API based on the user input in the HTML Form
 *  Print results from the API with FETCH API, AJAX and ASYNC / AWAIT.
+
+
+#### API USED - [https://uinames.com/](https://uinames.com/)
