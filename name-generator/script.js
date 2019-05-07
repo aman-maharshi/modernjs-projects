@@ -9,13 +9,18 @@ function laodNames(e) {
 
     // build URL
     let url = 'https://uinames.com/api/?';
-    if (region != '') {
+    if (region != '' && amount != '') {
         url +=  `region=${region}`;
         url += `&gender=${gender}`;
-    }
-    if (amount != '') {
         url += `&amount=${amount}`;
-        console.log(url);
+        console.log(url);    
+    }
+    if (amount == '') {
+        document.querySelector('.warning').textContent = 'All fields are mandatory';
+        setTimeout(function() {
+            document.querySelector('.warning').textContent = '';
+        }, 2000)
+        
     }
     
 
