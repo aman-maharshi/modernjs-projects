@@ -1,6 +1,5 @@
 document.getElementById('form').addEventListener('submit', laodNames);
 
-
 function laodNames(e) {
     e.preventDefault();
     const region = document.getElementById('country').value;
@@ -15,7 +14,7 @@ function laodNames(e) {
         url += `&amount=${amount}`;  
         ajaxRequest(url);
     }
-    if (amount == '') {
+    if (amount == '' || region == '') {
         document.querySelector('.warning').textContent = 'All fields are mandatory';
         setTimeout(function() {
             document.querySelector('.warning').textContent = '';
@@ -33,8 +32,8 @@ function ajaxRequest(url) {
             obj.forEach(element => {
                 output += `<li>${element.name}</li>`
             });
+            // document.getElementById('names').firstElementChild.style.display = 'none';
             document.getElementById('result').innerHTML = output;
-
         }
     }
     xhr.send();
