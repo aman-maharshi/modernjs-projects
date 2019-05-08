@@ -27,12 +27,13 @@ function ajaxRequest(url) {
     xhr.open('GET', url, true);
     xhr.onload = function() {
         if(this.status == 200) {
-            let obj = JSON.parse(this.responseText);
-            let output = '';
+            const obj = JSON.parse(this.responseText);
+            let output = '<h4>Generated Names</h4>'
+            output += '<ul>'
             obj.forEach(element => {
                 output += `<li>${element.name}</li>`
             });
-            // document.getElementById('names').firstElementChild.style.display = 'none';
+            output += '</ul>'
             document.getElementById('result').innerHTML = output;
         }
     }
