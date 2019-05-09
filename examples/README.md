@@ -22,3 +22,17 @@
     xhr.send();
 ````
 ## Fetch API
+
+```javascript
+    .fetch('https://jsonplaceholder.typicode.com/users')
+        .then(function(response) {
+            return response.json();
+        });
+        .then(function(data) {
+            let output  = '';
+            data.foreach(element => {
+                output += `<li class="list">${element.name}</li>`
+            })
+            document.getElementById('result3').innerHTML = output;
+        })
+```
