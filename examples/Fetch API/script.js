@@ -27,7 +27,11 @@ function loadJson() {
         return response.json();
     })
     .then(function(data){
-        console.log(data);
+        output = ''
+        data.forEach(element => {
+            output += `<p>"${element.quote}"<span> - ${element.author}</span><p>`
+        });
+        result.innerHTML = output;
     }) 
 
 }
