@@ -12,6 +12,7 @@ function loadText() {
     fetch('data.txt')
     // Step 2: use promise
     .then(function(response) {
+        // console.log(response)
         return response.text();
     })
     .then(function(data) {
@@ -21,6 +22,13 @@ function loadText() {
 }
 
 function loadJson() {
+    fetch('quotes.json')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data);
+    }) 
 
 }
 
