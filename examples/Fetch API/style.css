@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Amaranth');
+:root {
+    --black: #111;
+    --gray: #444;
+    --cyan: #0abfdc;
+}
+* {
+    font-family: Amaranth, sans-serif;
+}
+header h1 {
+    font-size: 3rem;
+    padding-left: 1em;
+    position: relative;
+    text-align: center;
+}
+header h1:before {
+    content: '';
+    height: 0.7em;
+    width: 5px;
+    background: var(--gray);
+    position: absolute;
+    left: 1em;
+}
+main, section {
+    color: var(--gray);
+    max-width: 1000px;
+    margin: auto;
+}
+main p {
+    text-align: center;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    max-width: 650px;
+    margin: auto;
+}
+button {
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border: 1px solid var(--cyan);
+    border-radius: 5px;
+    color: var(--cyan);
+    outline: none;
+    padding: 5px 10px;
+}
+button:hover {
+    color: var(--gray);
+}
+button:active {
+    border-color: var(--black);
+    color: var(--black);
+    background: rgba(0,0,0,0.5);
+}
+#result {
+    margin-top: 1em;
+    min-height: 20vh;
+    border-radius: 5px;
+    padding: 0.5em;
+    text-align: center;
+}
