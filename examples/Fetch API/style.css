@@ -64,3 +64,8 @@ span {
     color: rgb(151, 151, 151);
     font-size: 0.9rem;
 }
+.highlight {
+    background-color: lightyellow;
+    max-width: 500px;
+    margin: 0.5em auto;
+}

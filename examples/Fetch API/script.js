@@ -37,5 +37,12 @@ function loadJson() {
 }
 
 function loadJsonApi() {
-
+    fetch('https://quota.glitch.me/random')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        result.innerHTML = `<p>"${data.quoteText}"<span> - ${data.quoteAuthor}</span></p>`;
+    })
+    
 }
