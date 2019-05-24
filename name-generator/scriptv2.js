@@ -22,12 +22,11 @@ function laodNames(e) {
     }
 }
 
+// using arrow functions
 function ajaxRequest(url) {
     fetch(url)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
+        .then(response => response.json() )
+        .then(data => {
             let output = '<h4>Generated Names</h4>'
             output += '<ul>'
             data.forEach(element => {
@@ -36,10 +35,27 @@ function ajaxRequest(url) {
             output += '</ul>'
             document.getElementById('result').innerHTML = output;
         })
-        .catch(function(error) {
-            console.log(error);
-        })
+        .catch(error => console.log(error));
 }
+
+// function ajaxRequest(url) {
+//     fetch(url)
+//         .then(function(response) {
+//             return response.json();
+//         })
+//         .then(function(data) {
+//             let output = '<h4>Generated Names</h4>'
+//             output += '<ul>'
+//             data.forEach(element => {
+//                 output += `<li>${element.name}</li>`
+//             });
+//             output += '</ul>'
+//             document.getElementById('result').innerHTML = output;
+//         })
+//         .catch(function(error) {
+//             console.log(error);
+//         })
+// }
 
 
 // function ajaxRequest(url) {
