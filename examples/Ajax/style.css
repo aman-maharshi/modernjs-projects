@@ -23,6 +23,8 @@ button {
     font-size: 1rem;
     cursor: pointer;
     padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 button:hover {
     color: white;
@@ -37,4 +39,12 @@ button:hover {
     margin-left: 2em;
     margin-top: 5px;
 }
-
+.users {
+    background: rgb(255, 202, 210);
+}
+.joke {
+    background: lightyellow;
+}
+ p a {
+     margin-left: 1em;
+ }

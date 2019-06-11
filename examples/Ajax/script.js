@@ -95,3 +95,21 @@ function loadUsersFromApi() {
     xhr.send();
 
 }
+/*
+    FOURTH - CHUCK NORRIS JOKE LOADER
+---------------------------------------*/
+const output = document.querySelector('#result4');
+const button = document.querySelector('#btn4');
+button.addEventListener('click', loadChuck);
+function loadChuck() {
+    fetch('http://api.icndb.com/jokes/random/3')
+        .then((response) => response.json())
+        .then((data) => {
+            let arr = data.value;
+            result = ''
+            arr.forEach((entry) => {
+                result += `<p>${entry.joke}</p>`
+            })
+            output.innerHTML = result;
+        });
+}
