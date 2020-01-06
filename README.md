@@ -3,7 +3,6 @@
 > Click on the links below to access each App
 
 ## Projects
-1. [Weekly Budget App](https://aman-maharshi.github.io/modernjs-projects/weekly-budget-app-v2/)
 1. [Shopping Cart Functionality](https://aman-maharshi.github.io/modernjs-projects/shopping-cart/)
 1. [Todo App](https://aman-maharshi.github.io/modernjs-projects/todo-app-v2/)
 1. [Name Generator App](https://aman-maharshi.github.io/modernjs-projects/name-generator/)
